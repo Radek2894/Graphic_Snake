@@ -23,7 +23,7 @@ namespace Graphic_Snake
         public static List<string> players = new List<string>();
 
 
-        //public static System.Windows.Media.MediaPlayer player = new System.Windows.Media.MediaPlayer();
+        public static System.Windows.Media.MediaPlayer player = new System.Windows.Media.MediaPlayer();
 
         public Menu_Form()
         {
@@ -31,23 +31,17 @@ namespace Graphic_Snake
 
 
 
-
-            //    player.MediaEnded += MediaEnded;
-            //    player.Open(new Uri(@"C:\Users\Admin\source\repos\Graphic_Snake\SnakeSong.wav"));
-            //    player.Play();
+            InitializeComponent();
+            player.MediaEnded += MediaEnded;
+            player.Open(new Uri(@"c:\users\admin\source\repos\graphic_snake\SnakeSong.wav"));
+            player.Play();
         }
 
-        //}
-
-        //    public void mediaended(object sender, eventargs e)
-        //    {
-        //        player.open(new uri(@"c:\users\admin\source\repos\graphic_snake\snakesong.wav"));
-        //        player.play();
-        //    }
-
-
-
-
+        public void MediaEnded(object sender, EventArgs e)
+        {
+            player.Open(new Uri(@"c:\users\admin\source\repos\graphic_snake\SnakeSong.wav"));
+            player.Play();
+        }
 
         private void LoadGame(object sender, EventArgs e)
 
@@ -240,5 +234,6 @@ namespace Graphic_Snake
         }
     }
 }
+
 
 

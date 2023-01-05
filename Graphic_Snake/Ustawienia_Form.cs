@@ -57,7 +57,7 @@ namespace Graphic_Snake
 
         private void volume_Scroll(object sender, EventArgs e)
         {
-           // Menu_Form.player.Volume = (float)music.Value / 10;
+            Menu_Form.player.Volume = (float)volume.Value / 10;
         }
     }
 }
